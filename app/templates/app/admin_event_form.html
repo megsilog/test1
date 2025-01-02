@@ -1,0 +1,16 @@
+{% extends "app/admin_dashboard.html" %}
+
+{% block title %}Edit Event{% endblock %}
+
+{% block content %}
+    <h1>Edit Event: {{ event.title }}</h1>
+
+    <!-- Event edit form -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <a href="{% url 'admin_dashboard' %}">Back to Dashboard</a>
+{% endblock %}
